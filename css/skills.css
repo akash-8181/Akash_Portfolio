@@ -1,0 +1,112 @@
+:root {
+  --size: 150px;
+  --thickness: 10px;
+}
+
+.skills-section {
+  background-color: #0c384f;
+  color: #fff;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #00ffff;
+  text-shadow: 0 0 3px #00ffff;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: #cfcfcf;
+  max-width: 650px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+.circular-progress {
+  --percentage: calc(var(--value) * 1deg * 3.6);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background: conic-gradient(
+    red 0deg,
+    orange,
+    yellow,
+    lime,
+    cyan,
+    blue,
+    violet,
+    red var(--percentage),
+    rgba(255, 255, 255, 0.1) var(--percentage)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+  padding: var(--thickness);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+}
+
+.circular-progress::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  background: #0c384f;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0, 110, 255);
+  z-index: 1;
+}
+.circular-progress:hover{
+  box-shadow: 0 0 30px rgba(0, 110, 255, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+
+.inner-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-icon {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.skill-label {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.skill-percent {
+  font-size: 0.85rem;
+  color: #bbb;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  :root {
+    --size: 120px;
+    --thickness: 8px;
+  }
+
+  .skill-icon {
+    font-size: 1.5rem;
+  }
+
+  .skill-label {
+    font-size: 0.9rem;
+  }
+
+  .skill-percent {
+    font-size: 0.75rem;
+  }
+}

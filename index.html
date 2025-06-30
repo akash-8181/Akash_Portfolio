@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Portfolio Website</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Bootstrap & Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="icon" type="image/x-icon" href="./images/ap_logo_1.png">
+  
+</head>
+<body>
+
+  <!-- Navbar -->
+    
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-color">
+        <div class="container-fluid mx-lg-3">
+          <!-- Logo -->
+          <a class="navbar-brand" href="#">
+            <img src="./images/ap_logo_1.png" class="nav-icon" alt="Logo">
+          </a>
+    
+          <!-- Offcanvas Toggle (mobile) -->
+          <button class="btn btn-light d-lg-none offcanvas-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+            <i class="fa-solid fa-bars-staggered text-dark"></i>
+          </button>
+    
+          <!-- Offcanvas Menu -->
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight">
+            <div class="offcanvas-header justify-content-end">
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body d-flex justify-content-lg-end justify-content-center align-item-center">
+              <ul class="navbar-nav gap-5 main-menu">
+                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+
+
+
+
+  <!------------------------------------------- banner ---------------------------------------------->
+
+  <section class="banner">
+    <svg id="svg"></svg>
+    
+    <div class="content">
+        <h1 class="banner-title">Akash Prajapati</h1>
+        <div class="text-rotate">
+          <span class="word">Web Developer</span>
+          <span class="word">Frontend Developer</span>
+          <span class="word">UI/UX Designer</span>
+        </div>
+        <p class="paragraph description">
+            Crafting digital experiences through code and creativity. 
+            Explore the constellations of my work by hovering over the navigation below.
+        </p>
+        
+        <ul class="nav-list" data-aos="fade-up" data-aos-delay="1000">
+            <li class="list-item" id="0">Web Development</li>
+            <li class="list-item" id="1">UI/UX Design</li>
+            <li class="list-item" id="2">SEO</li>
+            <li class="list-item" id="3">Digital Marketing</li>
+        </ul>
+    </div>
+</section>
+
+<!------------------------------------------- about me ---------------------------------------------->
+
+
+<section class="about-dynamic" id="about">
+  <div class="container">
+    <h2 class="about-title section-title">About Me</h2>
+    <div class="about-content">
+      <div class="about-image-wrapper">
+        <div class="about-img-wrapper">
+          <img src="./images/me2.png" alt="Akash" class="about-img">
+        </div>
+      
+        <div class="floating-bubble bubble-1">HTML</div>
+        <div class="floating-bubble bubble-2">CSS</div>
+        <div class="floating-bubble bubble-3">GSAP</div>
+        <div class="floating-bubble bubble-4">BOOTSTRAP</div>
+        <div class="floating-bubble bubble-5">JAVASCRIPT</div>
+      </div>
+      
+      <div class="about-description">
+        <p class="line paragraph">
+          Hey there! I'm <strong>Akash</strong>, a frontend developer who loves building expressive, performant websites.
+        </p>
+        <p class="line paragraph">
+          I specialize in creating dynamic interfaces using <strong>GSAP, Three.js,</strong> and modern web frameworks.
+        </p>
+        <p class="line paragraph">
+          I believe in clean design, smooth animations, and code that feels good to read.
+        </p>
+        <a href="#contact" class="about-btn paragraph">Get in Touch</a>
+      </div>
+    </div>
+    <div class="education-section">
+      <h3 class="edu-heading">Education</h3>
+      <div class="edu-timeline">
+        <div class="edu-card">
+          <h4 class="edu-level">School</h4>
+          <p class="edu-name paragraph">Devasya International School</p>
+          <p class="edu-year">2018 - 2020</p>
+          <p class="edu-detail paragraph">Completed HSC with a strong foundation in Computer Basics.</p>
+        </div>
+    
+        <div class="edu-card">
+          <h4 class="edu-level">College</h4>
+          <p class="edu-name paragraph">L.J. Institute of Computer & Technology</p>
+          <p class="edu-year">2020 - 2025</p>
+          <p class="edu-detail paragraph">Master's Degree in Computer Applications with focus on Fullstack development and UI/UX.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+
+<!------------------------------------------- Services ---------------------------------------------->
+<section id="services" class="services-section py-5">
+  <div class="container text-center">
+    <h2 class="section-title mb-4" data-aos="fade-up">My Services</h2>
+    <p class="section-subtitle mb-5 paragraph" data-aos="fade-up" data-aos-delay="100">
+      What I offer as a developer and designer
+    </p>
+
+    <div class="row g-4 d-flex justify-content-space-between">
+      <!-- Service Card 1 -->
+      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+        <div class="neon-card">
+          <div class="service-card card-content">
+            <i class="fa-solid fa-code service-icon"></i>
+            <h4 class="service-title">Web Development</h4>
+            <p class="service-desc paragraph">Custom websites using HTML, CSS, JavaScript, and frameworks like React or Bootstrap.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service Card 2 -->
+      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+        <div class="neon-card">
+          <div class="service-card card-content">
+            <i class="fa-solid fa-paintbrush service-icon"></i>
+            <h4 class="service-title">UI/UX Design</h4>
+            <p class="service-desc paragraph">Modern and user-friendly interfaces designed with attention to user experience & full Optimization.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service Card 3 -->
+      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+        <div class="neon-card">
+          <div class="service-card card-content">
+            <i class="fa-solid fa-rocket service-icon"></i>
+            <h4 class="service-title">Performance Optimization</h4>
+            <p class="service-desc paragraph">Speed up and streamline your website for better SEO and user engagement.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!----------------------------------------- Skills Section ------------------------------------->
+<section id="skills" class="skills-section py-5">
+  <div class="container">
+    <h2 class="section-title text-center mb-4" data-aos="fade-up">My Skills</h2>
+    <p class="section-subtitle text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+      Technologies & tools I specialize in — from pixel-perfect design to interactive experiences.
+    </p>
+
+    <div class="row g-4 justify-content-center">
+
+      <!-- Skill Card -->
+      <div class="col-lg-3 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="200">
+        <div class="circular-progress" style="--value: 95;">
+          <div class="inner-content">
+            <i class="fa-brands fa-html5 skill-icon"></i>
+            <div class="skill-label">HTML</div>
+            <div class="skill-percent">95%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="200">
+        <div class="circular-progress" style="--value: 90;">
+          <div class="inner-content">
+            <i class="fa-brands fa-css3-alt skill-icon"></i>
+            <div class="skill-label">CSS</div>
+            <div class="skill-percent">90%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="200">
+        <div class="circular-progress" style="--value: 85;">
+          <div class="inner-content">
+            <i class="fa-brands fa-js skill-icon"></i>
+            <div class="skill-label">JavaScript</div>
+            <div class="skill-percent">85%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="200">
+        <div class="circular-progress" style="--value: 95;">
+          <div class="inner-content">
+            <i class="fa-brands fa-bootstrap skill-icon"></i>
+            <div class="skill-label">Bootstrap</div>
+            <div class="skill-percent">95%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="200">
+        <div class="circular-progress" style="--value: 80;">
+          <div class="inner-content">
+            <i class="fa-solid fa-bolt skill-icon"></i>
+            <div class="skill-label">GSAP</div>
+            <div class="skill-percent">80%</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+  
+
+  <!-- JS Scripts -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./js/script.js"></script>
+
+</body>
+</html>

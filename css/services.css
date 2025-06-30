@@ -1,0 +1,159 @@
+/* Section background */
+.services-section {
+  background: radial-gradient(circle, rgb(12, 56, 79) 0%, rgba(8, 14, 19, 1) 100%);
+  padding: 80px 20px;
+  color: white;
+  text-align: center;
+}
+
+/* Section titles */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--text-color, #00ffff);
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: #ccc;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+/* Neon container */
+.neon-card {
+  position: relative;
+  padding: 3px;
+  border-radius: 16px;
+  background: transparent;
+  z-index: 0;
+}
+
+.neon-card::before,
+.neon-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: -1;
+  background-image: conic-gradient(
+    from var(--angle),
+    transparent 0%,
+    red,
+    orange,
+    yellow,
+    lime,
+    cyan,
+    blue,
+    indigo,
+    violet,
+    red
+  );
+  animation: spin 4s linear infinite;
+}
+
+.neon-card::after {
+  filter: blur(30px);
+  opacity: 0.2;
+}
+
+/* Inner card */
+.service-card {
+  background: #00273b;
+  border-radius: 16px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 0 15px rgba(0, 255, 255);
+  height: 100%;
+}
+
+.service-card:hover {
+  box-shadow: 0 0 25px rgba(0, 255, 255);
+}
+
+/* Icon and text */
+.service-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: var(--text-color, #0C384F);
+}
+
+.service-title {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.service-desc {
+  font-size: 0.95rem;
+  color: #bbb;
+}
+
+/* CSS Property for conic gradient animation */
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+
+/* Responsive Grid Fixes */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.col-lg-4, .col-md-6 {
+  flex: 1 1 300px;
+  max-width: 100%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .service-card {
+    padding: 25px 16px;
+  }
+
+  .service-icon {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+    padding: 0 10px;
+  }
+
+  .service-title {
+    font-size: 1.1rem;
+  }
+
+  .service-desc {
+    font-size: 0.9rem;
+  }
+
+  .service-icon {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+}

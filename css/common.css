@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* scroll-behavior: smooth; */
+}
+@font-face {
+    font-family: 'MyFont';
+    src: url('../fonts/Orbitron/Orbitron-VariableFont_wght.ttf') format('truetype');
+    /* Also support woff/woff2 if you have them */
+  }
+body{
+    font-family: 'MyFont', sans-serif;
+    background: #0C384F;
+background: radial-gradient(circle,rgba(12, 56, 79, 1) 0%, rgba(8, 14, 19, 1) 100%);
+position: sticky;
+top: 0;
+}
+
+:root {
+    /* --primary-color: #000000; */
+    /* --secondary-color: #a6a6a6; */
+    --text-color: #0CC0E0;
+}
+.paragraph{
+    
+word-spacing: 5px !important;
+    
+}
+@media (max-width:768px) {   
+    .common-title{
+        font-size: 25px;
+    }
+    .paragraph{
+        font-size: 15px !important;
+        
+    }
+}
+@media (max-width:500px) {   
+    .common-title{
+        font-size: 20px;
+    }
+    .paragraph{
+        font-size: 10px !important;
+    }
+}
