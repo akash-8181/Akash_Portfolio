@@ -266,3 +266,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //skills
 
+document.querySelectorAll('.skill-card').forEach(card => {
+  const percent = +card.getAttribute('data-percent');
+  const fgRing = card.querySelector('.fg-ring');
+  const text = card.querySelector('.percent-text');
+  const radius = 50;
+  const circumference = 2 * Math.PI * radius;
+  let current = 0;
+
+  const getColor = (val) => {
+    if (val >= 90) return 'lime';
+    if (val >= 75) return 'gold';
+    if (val >= 60) return 'orange';
+    return 'red';
+  };
+
+  const animate = () => {
+    current++;
+    const offset = circumference - (current / 100) * circumference;
+    fgRing.style.strokeDashoffset = offset;
+    fgRing.style.stroke = getColor(current);
+    text.textContent = `${current}%`;
+    if (current < percent) requestAnimationFrame(animate);
+  };
+
+  fgRing.style.strokeDasharray = circumference;
+  fgRing.style.strokeDashoffset = circumference;
+
+  setTimeout(() => requestAnimationFrame(animate), 400);
+});
