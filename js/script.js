@@ -311,31 +311,31 @@ document.querySelectorAll('.skill-card').forEach(card => {
 //projects
 const projects = [
   {
-    title: "Portfolio Website",
+    title: "Stock Management",
     description: "A personal portfolio built with modern UI principles and optimized for performance. Fully responsive and visually impressive.",
-    tools: ["HTML", "CSS", "JavaScript"],
+    tools: [".NET", "C#", "SQL"],
     images: [
-      "https://source.unsplash.com/400x300/?portfolio",
+      "./images/stock.webp",
     ],
-    link: "https://yourportfolio.com"
+    link: "https://github.com/akash-8181/Stock_management.git"
   },
   {
-    title: "Product Catalog",
+    title: "Travel App",
     description: "A dynamic, filterable product catalog with popups for detailed views and smooth UI animations using vanilla JS.",
-    tools: ["HTML", "CSS", "JavaScript"],
+    tools: ["Flutter", "Dart", "Firebase"],
     images: [
-      "https://source.unsplash.com/400x300/?ecommerce",
+      "./images/travel.png",
     ],
-    link: "#"
+    link: "https://github.com/akash-8181/Travel_application.git"
   },
   {
-    title: "3D Flocking Simulation",
+    title: "Champion Squad",
     description: "GPU-based bird flocking simulation using Three.js and custom GLSL shaders. Performance-optimized and interactive.",
-    tools: ["Three.js", "GLSL", "WebGL"],
+    tools: ["Flutter", "Dart", "Firebase"],
     images: [
-      "https://source.unsplash.com/400x300/?3d",
+      "./images/one-for-all.png",
     ],
-    link: "#"
+    link: "https://github.com/akash-8181/Champion_Sqard-one-for-all-.git"
   }
 ];
 
