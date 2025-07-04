@@ -1,17 +1,15 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+  /* font-family: 'Segoe UI', sans-serif; */
   background: linear-gradient(135deg, #0c384f, #001219);
   color: #fff;
   overflow-x: hidden;
 }
 
 .skills-section {
+  background: radial-gradient(circle, rgb(12, 56, 79) 0%, rgba(8, 14, 19, 1) 100%);
+
   padding: 60px 20px;
   text-align: center;
 }

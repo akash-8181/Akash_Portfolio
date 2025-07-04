@@ -18,7 +18,7 @@
   <!-- Navbar -->
     
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-color">
+      <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-color">
         <div class="container-fluid mx-lg-3">
           <!-- Logo -->
           <a class="navbar-brand" href="#">
@@ -128,6 +128,18 @@
           <p class="edu-detail paragraph">Master's Degree in Computer Applications with focus on Fullstack development and UI/UX.</p>
         </div>
       </div>
+      <h3 class="edu-heading mt-5">Work Experience</h3>
+      <div class="edu-timeline">
+        <div class="edu-card">
+          <h4 class="edu-level">Internship</h4>
+          <p class="edu-name paragraph">Vibrant India Tech</p>
+          <p class="edu-year">6 Months</p>
+          <p class="edu-detail paragraph">Worked on frontend technologies like HTML, CSS, JavaScript and gained hands-on experience. Also started learning React and backend technologies.</p>
+        </div>
+    
+      </div>
+    </div>
+    
     </div>
     
   </div>
@@ -251,8 +263,26 @@
 
 
 
+<!---------------------------------------------- projects ------------------------------------>
 
-  
+<section class="projects-section">
+  <h2>My Projects</h2>
+  <p>Click any project to view full details and gallery</p>
+  <div class="projects-grid" id="projects-container"></div>
+</section>
+
+<!-- Modal -->
+<div class="modal" id="project-modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="document.getElementById('project-modal').style.display='none'">&times;</span>
+    <h3 id="modal-title"></h3>
+    <div class="images" id="modal-images"></div>
+    <p id="modal-desc"></p>
+    <div class="tools" id="modal-tools"></div>
+    <a id="modal-link" href="#" target="_blank">Visit Project ↗</a>
+  </div>
+</div>
+
 
   <!-- JS Scripts -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

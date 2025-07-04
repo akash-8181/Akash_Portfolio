@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+
 //banner
 
 (function() {
@@ -294,4 +295,87 @@ document.querySelectorAll('.skill-card').forEach(card => {
   fgRing.style.strokeDashoffset = circumference;
 
   setTimeout(() => requestAnimationFrame(animate), 400);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+//projects
+const projects = [
+  {
+    title: "Portfolio Website",
+    description: "A personal portfolio built with modern UI principles and optimized for performance. Fully responsive and visually impressive.",
+    tools: ["HTML", "CSS", "JavaScript"],
+    images: [
+      "https://source.unsplash.com/400x300/?portfolio",
+    ],
+    link: "https://yourportfolio.com"
+  },
+  {
+    title: "Product Catalog",
+    description: "A dynamic, filterable product catalog with popups for detailed views and smooth UI animations using vanilla JS.",
+    tools: ["HTML", "CSS", "JavaScript"],
+    images: [
+      "https://source.unsplash.com/400x300/?ecommerce",
+    ],
+    link: "#"
+  },
+  {
+    title: "3D Flocking Simulation",
+    description: "GPU-based bird flocking simulation using Three.js and custom GLSL shaders. Performance-optimized and interactive.",
+    tools: ["Three.js", "GLSL", "WebGL"],
+    images: [
+      "https://source.unsplash.com/400x300/?3d",
+    ],
+    link: "#"
+  }
+];
+
+const container = document.getElementById("projects-container");
+const modal = document.getElementById("project-modal");
+
+projects.forEach(project => {
+  const card = document.createElement("div");
+  card.className = "project-card";
+  card.innerHTML = `
+    <img src="${project.images[0]}" alt="${project.title}">
+    <div class="project-content">
+      <h3>${project.title}</h3>
+      <p>${project.description.slice(0, 80)}...</p>
+    </div>
+  `;
+  card.addEventListener("click", () => {
+    document.getElementById("modal-title").textContent = project.title;
+    document.getElementById("modal-desc").textContent = project.description;
+    document.getElementById("modal-tools").textContent = `Tools: ${project.tools.join(", ")}`;
+    document.getElementById("modal-link").href = project.link;
+
+    const imageContainer = document.getElementById("modal-images");
+    imageContainer.innerHTML = "";
+
+    const imgEl = document.createElement("img");
+    imgEl.src = project.images[0];
+    imgEl.alt = project.title;
+    imgEl.classList.add("main-modal-image");
+    imageContainer.appendChild(imgEl);
+
+    modal.style.display = "block";
+  });
+
+  container.appendChild(card);
+});
+
+// Close modal on outside click
+window.addEventListener("click", e => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
 });
