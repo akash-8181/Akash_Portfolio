@@ -312,7 +312,7 @@ document.querySelectorAll('.skill-card').forEach(card => {
 const projects = [
   {
     title: "Stock Management",
-    description: "A personal portfolio built with modern UI principles and optimized for performance. Fully responsive and visually impressive.",
+    description: "Stock management of different companies and their products, customer can buy Stock of their choice as available.",
     tools: [".NET", "C#", "SQL"],
     images: [
       "./images/stock.webp",
@@ -321,7 +321,7 @@ const projects = [
   },
   {
     title: "Travel App",
-    description: "A dynamic, filterable product catalog with popups for detailed views and smooth UI animations using vanilla JS.",
+    description: "Travel app is best for travel agency to manage customers travelling and bookings.",
     tools: ["Flutter", "Dart", "Firebase"],
     images: [
       "./images/travel.png",
@@ -330,7 +330,7 @@ const projects = [
   },
   {
     title: "Champion Squad",
-    description: "GPU-based bird flocking simulation using Three.js and custom GLSL shaders. Performance-optimized and interactive.",
+    description: "Champion Squad is includes all kind of bookings(hotel, flight, car, etc.), stock management, Movie Booking, E-commerce, Food Ordering.",
     tools: ["Flutter", "Dart", "Firebase"],
     images: [
       "./images/one-for-all.png",

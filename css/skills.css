@@ -1,15 +1,6 @@
-
-
-body {
-  /* font-family: 'Segoe UI', sans-serif; */
-  background: linear-gradient(135deg, #0c384f, #001219);
-  color: #fff;
-  overflow-x: hidden;
-}
-
 .skills-section {
   background: radial-gradient(circle, rgb(12, 56, 79) 0%, rgba(8, 14, 19, 1) 100%);
-
+  color: #fff;
   padding: 60px 20px;
   text-align: center;
 }
@@ -49,7 +40,7 @@ body {
 
 .skill-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 40px rgba(0, 255, 255, 0.15);
+  box-shadow: 0 0px 40px rgba(0, 255, 255, 0.15);
 }
 
 .skill-icon {
