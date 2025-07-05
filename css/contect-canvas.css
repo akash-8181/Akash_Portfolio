@@ -1,0 +1,61 @@
+
+.my-details {
+    position: fixed;
+    z-index: 5555555;
+    top: 50%;
+    left: -60px;
+    transform: rotate(-90deg);
+    background: radial-gradient(circle, rgb(12, 56, 79) 0%, rgba(8, 14, 19, 1) 100%);
+    opacity: 0.5;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+  }
+
+  .my-details:hover {
+    left: -50px;
+    opacity: 1;
+    box-shadow: 0 0 20px #0cc0df;
+  }
+
+  .contect-me-canvas {
+    background: radial-gradient(circle, rgb(12, 56, 79) 0%, rgba(8, 14, 19, 1) 100%);
+    z-index: 555555555555555;
+  }
+
+  .offcanvas-title {
+    height: 80px;
+    width: 80px;
+  }
+
+  .offcanvas-logo {
+    height: 100%;
+    width: 100%;
+  }
+
+  .offcanvas-body h5 {
+    color: #0cc0df;
+    font-weight: 600;
+  }
+
+  .offcanvas-body a {
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  .offcanvas-body a:hover {
+    transform: scale(1.2);
+    color: #0cc0df;
+  }
+  
+
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(12, 192, 223, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(12, 192, 223, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(12, 192, 223, 0); }
+  }
+
+  @media (max-width: 768px) {
+    .my-details {
+      left: -50px;
+    }
+  }

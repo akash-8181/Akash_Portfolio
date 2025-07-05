@@ -52,6 +52,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+//contect canvas
+
+document.addEventListener('DOMContentLoaded', function () {
+  const offcanvasEl = document.getElementById('staticBackdrop');
+
+  offcanvasEl.addEventListener('shown.bs.offcanvas', () => {
+    gsap.from('.offcanvas-body > div', {
+      opacity: 0,
+      x: -50,
+      duration: 0.6,
+      stagger: 0.2,
+      ease: "power2.out"
+    });
+
+    gsap.from('.offcanvas-body a', {
+      scale: 0,
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.1,
+      delay: 0.6,
+      ease: "back.out(1.7)"
+    });
+  });
+});
+
+
+
+
+
+
 
 
 
