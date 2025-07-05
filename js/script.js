@@ -1,6 +1,6 @@
-window.addEventListener('resize', () => {
-  location.reload(); // Simple solution for demo
-});
+// window.addEventListener('resize', () => {
+//   location.reload(); // Simple solution for demo
+// });
 
 document.addEventListener('DOMContentLoaded', function () {
   const toggleButton = document.querySelector('.offcanvas-toggle');
