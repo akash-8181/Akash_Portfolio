@@ -217,9 +217,9 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Responsive resize
-  window.addEventListener('resize', () => {
-      location.reload(); // Simple solution for demo
-  });
+  // window.addEventListener('resize', () => {
+  //     location.reload(); // Simple solution for demo
+  // });
 })();
 
 
