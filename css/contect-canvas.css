@@ -1,7 +1,7 @@
 
 .my-details {
     position: fixed;
-    z-index: 5555555;
+    z-index: 9999;
     top: 50%;
     left: -60px;
     transform: rotate(-90deg);
@@ -9,6 +9,8 @@
     opacity: 0.5;
     transition: all 0.3s ease;
     animation: pulse 2s infinite;
+    padding: 8px 18px;
+    font-weight: 500;
   }
 
   .my-details:hover {
@@ -19,7 +21,8 @@
 
   .contect-me-canvas {
     background: radial-gradient(circle, rgb(12, 56, 79) 0%, rgba(8, 14, 19, 1) 100%);
-    z-index: 555555555555555;
+    z-index: 999999;
+    color: white;
   }
 
   .offcanvas-title {
@@ -35,6 +38,12 @@
   .offcanvas-body h5 {
     color: #0cc0df;
     font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+
+  .offcanvas-body p {
+    margin: 0;
+    font-size: 0.95rem;
   }
 
   .offcanvas-body a {
@@ -46,7 +55,6 @@
     transform: scale(1.2);
     color: #0cc0df;
   }
-  
 
   @keyframes pulse {
     0% { box-shadow: 0 0 0 0 rgba(12, 192, 223, 0.4); }
