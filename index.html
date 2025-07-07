@@ -16,86 +16,77 @@
 <body>
 
   <!-- Navbar -->
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-color">
-      <div class="container-fluid mx-lg-3">
-        <!-- Logo -->
-        <a class="navbar-brand" href="#">
-          <img src="./images/ap_logo_1.png" class="nav-icon" alt="Logo">
-        </a>
-  
-        <!-- Offcanvas Toggle -->
-        <button class="btn btn-primary d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
-          <i class="fa-solid fa-bars-staggered text-dark"></i>
-        </button>
-  
-        <!-- Offcanvas Menu -->
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight">
-          <div class="offcanvas-header justify-content-end">
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body d-flex justify-content-lg-end justify-content-center ">
-            <ul class="navbar-nav gap-5 main-menu">
-              <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-              <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-              <li class="nav-item"><a class="nav-link" href="#Skills">Skills</a></li>
-              <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-            </ul>
-          </div>
+  <!-- HEADER -->
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-color">
+    <div class="container-fluid mx-lg-3">
+      <!-- Logo -->
+      <a class="navbar-brand" href="#">
+        <img src="./images/ap_logo_1.png" class="nav-icon" alt="Logo">
+      </a>
+
+      <!-- Navbar Toggle Button -->
+      <button class="btn btn-primary d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
+        <i class="fa-solid fa-bars-staggered text-dark"></i>
+      </button>
+
+      <!-- Navbar Offcanvas Menu -->
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu">
+        <div class="offcanvas-header justify-content-end">
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex justify-content-lg-end justify-content-center">
+          <ul class="navbar-nav gap-5 main-menu">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#Skills">Skills</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          </ul>
         </div>
       </div>
-    </nav>
-  </header>
-
-
-  <!--------------------------------------------contect me canvas ------------------------------->
-  <button class="btn btn-primary my-details" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
-    Contact Me
-  </button>
-
-  <!-- Offcanvas Sidebar -->
-  <div class="offcanvas offcanvas-start contect-me-canvas" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
-    <div class="offcanvas-header">
-      <div class="offcanvas-title" id="staticBackdropLabel">
-        <img src="./images/ap_logo_1.png" class="offcanvas-logo" alt="Logo">
-      </div>
-      <button type="button" class="btn-close bg-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
+  </nav>
+</header>
 
-    <div class="offcanvas-body text-white">
-      <div class="mb-4">
-        <h5><i class="fas fa-phone-alt me-2"></i>Mobile</h5>
-        <p>+91 9876543210</p>
-      </div>
+<!-- Contact Me Sidebar Button -->
+<button class="btn btn-primary my-details" type="button" data-bs-toggle="offcanvas" data-bs-target="#contactCanvas">
+  Contact Me
+</button>
 
-      <div class="mb-4">
-        <h5><i class="fas fa-envelope me-2"></i>Email</h5>
-        <p>example@email.com</p>
-      </div>
-
-      <div class="mb-4">
-        <h5><i class="fas fa-map-marker-alt me-2"></i>Address</h5>
-        <p>123, Your Street,<br>Your City, 123456</p>
-      </div>
-
-      <div>
-        <h5><i class="fas fa-globe me-2"></i>Follow Me</h5>
-        <div class="d-flex gap-4 fs-4 mt-2">
-          <div><a href="https://www.instagram.com/lla_s_hll/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a></div>
-          <div>
-          <a href="https://www.linkedin.com/in/akash-prajapati-84b09b310/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          </div>
-          <div>
-          <a href="https://www.facebook.com/profile.php?id=100033262818616" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-          </div>
-          <div>
-          <a href="https://github.com/akash-8181" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          </div>
-        </div>
+<!-- Contact Me Offcanvas -->
+<div class="offcanvas offcanvas-start contect-me-canvas" data-bs-backdrop="static" tabindex="-1" id="contactCanvas">
+  <div class="offcanvas-header">
+    <div class="offcanvas-title">
+      <img src="./images/ap_logo_1.png" class="offcanvas-logo" alt="Logo">
+    </div>
+    <button type="button" class="btn-close bg-white" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body text-white ms-5">
+    <div class="mb-4 d-flex gap-3">
+      <h5><i class="fas fa-phone-alt me-2"></i>Mobile</h5>
+      <p>+91 9876543210</p>
+    </div>
+    <div class="mb-4 d-flex gap-3">
+      <h5><i class="fas fa-envelope me-2"></i>Email</h5>
+      <p>example@email.com</p>
+    </div>
+    <div class="mb-4 d-flex gap-3">
+      <h5><i class="fas fa-map-marker-alt me-2"></i>Address</h5>
+      <p>123, Your Street,<br>Your City, 123456</p>
+    </div>
+    <div>
+      <h5><i class="fas fa-globe me-2"></i>Follow Me</h5>
+      <div class="d-flex gap-4 fs-4 mt-2">
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
       </div>
     </div>
   </div>
+</div>
+
 
   <!------------------------------------------- banner ---------------------------------------------->
 

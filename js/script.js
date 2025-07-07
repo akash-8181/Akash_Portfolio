@@ -3,24 +3,19 @@
 // });
 
 document.addEventListener('DOMContentLoaded', function () {
-  const toggleButton = document.querySelector('.offcanvas-toggle');
-  const offcanvas = document.getElementById('offcanvasRight');
-  const closeBtn = offcanvas.querySelector('.offcanvas-close');
-  const navItems = document.querySelectorAll('.nav-item');
   const navIcon = document.querySelector('.nav-icon');
+  const navItems = document.querySelectorAll('.nav-item');
+  const offcanvasMenu = document.getElementById('offcanvasMenu');
+  const bsOffcanvasMenu = new bootstrap.Offcanvas(offcanvasMenu);
 
-  // Bootstrap Offcanvas instance
-  const bsOffcanvas = new bootstrap.Offcanvas(offcanvas);
-
-    gsap.from(navIcon, {
+  gsap.from(navIcon, {
     duration: 1,
     y: -150,
     opacity: 0,
     ease: "back.out(1.7)"
   });
 
-  // GSAP timeline (paused initially)
-  const tl = gsap.timeline({ paused: false });
+  const tl = gsap.timeline({ paused: true });
 
   tl.from(navItems, {
     duration: 1,
@@ -30,10 +25,17 @@ document.addEventListener('DOMContentLoaded', function () {
     ease: "power2.out"
   });
 
-  // When Offcanvas opens
-  offcanvas.addEventListener('show.bs.offcanvas', () => {
-    tl.restart(); // play GSAP animation on open
+  offcanvasMenu.addEventListener('show.bs.offcanvas', () => {
+    tl.restart();
   });
+
+  // Close offcanvas when nav link clicked (optional)
+  document.querySelectorAll('.main-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      bsOffcanvasMenu.hide();
+    });
+  });
+});
 
 
 
@@ -43,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
       bsOffcanvas.hide();
     });
   });
-});
+
 
 
 
