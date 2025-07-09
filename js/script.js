@@ -1,13 +1,14 @@
 // window.addEventListener('resize', () => {
 //   location.reload(); // Simple solution for demo
 // });
-
 document.addEventListener('DOMContentLoaded', function () {
   const navIcon = document.querySelector('.nav-icon');
-  const navItems = document.querySelectorAll('.nav-item');
   const offcanvasMenu = document.getElementById('offcanvasMenu');
+  const offcanvasNavItems = offcanvasMenu.querySelectorAll('.nav-item');
+  const desktopNavItems = document.querySelectorAll('.navbar-collapse .nav-item');
   const bsOffcanvasMenu = new bootstrap.Offcanvas(offcanvasMenu);
 
+  // Logo animation (on page load)
   gsap.from(navIcon, {
     duration: 1,
     y: -150,
@@ -15,39 +16,38 @@ document.addEventListener('DOMContentLoaded', function () {
     ease: "back.out(1.7)"
   });
 
-  const tl = gsap.timeline({ paused: true });
-
-  tl.from(navItems, {
-    duration: 1,
-    x: 200,
+  // Desktop nav animation (once on load)
+  gsap.from(desktopNavItems, {
+    duration: 0.8,
+    y: -50,
     opacity: 0,
     stagger: 0.1,
     ease: "power2.out"
   });
 
+  // Mobile nav animation timeline (offcanvas)
+  const tl = gsap.timeline({ paused: true });
+
+  tl.from(offcanvasNavItems, {
+    duration: 0.8,
+    x: 100,
+    opacity: 0,
+    stagger: 0.1,
+    ease: "power2.out"
+  });
+
+  // Animate when offcanvas opens
   offcanvasMenu.addEventListener('show.bs.offcanvas', () => {
     tl.restart();
   });
 
-  // Close offcanvas when nav link clicked (optional)
-  document.querySelectorAll('.main-menu a').forEach(link => {
+  // Close offcanvas when any link is clicked
+  offcanvasMenu.querySelectorAll('.main-menu a').forEach(link => {
     link.addEventListener('click', () => {
       bsOffcanvasMenu.hide();
     });
   });
 });
-
-
-
-  // Optional: Close offcanvas when any nav link is clicked
-  document.querySelectorAll('.main-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      bsOffcanvas.hide();
-    });
-  });
-
-
-
 
 
 
