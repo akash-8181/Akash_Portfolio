@@ -344,74 +344,89 @@ document.querySelectorAll('.skill-card').forEach(card => {
 
 
 //projects
-const projects = [
+// Academic Projects
+const academicProjects = [
   {
     title: "Stock Management",
     description: "Stock management of different companies and their products, customer can buy Stock of their choice as available.",
     tools: [".NET", "C#", "SQL"],
-    images: [
-      "./images/stock.webp",
-    ],
+    images: ["./images/stock.webp"],
     link: "https://github.com/akash-8181/Stock_management.git"
   },
   {
     title: "Travel App",
     description: "Travel app is best for travel agency to manage customers travelling and bookings.",
     tools: ["Flutter", "Dart", "Firebase"],
-    images: [
-      "./images/travel.png",
-    ],
+    images: ["./images/travel.png"],
     link: "https://github.com/akash-8181/Travel_application.git"
   },
   {
     title: "Champion Squad",
-    description: "Champion Squad is includes all kind of bookings(hotel, flight, car, etc.), stock management, Movie Booking, E-commerce, Food Ordering.",
+    description: "Champion Squad includes hotel, flight, car booking, stock management, movie booking, e-commerce, and food ordering.",
     tools: ["Flutter", "Dart", "Firebase"],
-    images: [
-      "./images/one-for-all.png",
-    ],
+    images: ["./images/one-for-all.png"],
     link: "https://github.com/akash-8181/Champion_Sqard-one-for-all-.git"
   }
 ];
 
-const container = document.getElementById("projects-container");
-const modal = document.getElementById("project-modal");
+// Freelancing Projects
+const freelanceProjects = [
+  {
+    title: "Freelance Website UI",
+    description: "Responsive business portfolio with custom animations and contact form integration.",
+    tools: ["HTML", "CSS", "JavaScript", "GSAP"],
+    images: ["./images/parth_project.png"],
+    link: "https://parthplastopack.com/"
+  }
+  
+];
 
-projects.forEach(project => {
-  const card = document.createElement("div");
-  card.className = "project-card";
-  card.innerHTML = `
-    <img src="${project.images[0]}" alt="${project.title}">
-    <div class="project-content">
-      <h3>${project.title}</h3>
-      <p>${project.description.slice(0, 80)}...</p>
-    </div>
-  `;
-  card.addEventListener("click", () => {
-    document.getElementById("modal-title").textContent = project.title;
-    document.getElementById("modal-desc").textContent = project.description;
-    document.getElementById("modal-tools").textContent = `Tools: ${project.tools.join(", ")}`;
-    document.getElementById("modal-link").href = project.link;
+// Function to render projects into any container
+function renderProjects(projectArray, containerId) {
+  const container = document.getElementById(containerId);
+  const modal = document.getElementById("project-modal");
 
-    const imageContainer = document.getElementById("modal-images");
-    imageContainer.innerHTML = "";
+  projectArray.forEach(project => {
+    const card = document.createElement("div");
+    card.className = "project-card";
+    card.innerHTML = `
+      <img src="${project.images[0]}" alt="${project.title}">
+      <div class="project-content">
+        <h3>${project.title}</h3>
+        <p>${project.description.slice(0, 80)}...</p>
+      </div>
+    `;
 
-    const imgEl = document.createElement("img");
-    imgEl.src = project.images[0];
-    imgEl.alt = project.title;
-    imgEl.classList.add("main-modal-image");
-    imageContainer.appendChild(imgEl);
+    card.addEventListener("click", () => {
+      document.getElementById("modal-title").textContent = project.title;
+      document.getElementById("modal-desc").textContent = project.description;
+      document.getElementById("modal-tools").textContent = `Tools: ${project.tools.join(", ")}`;
+      document.getElementById("modal-link").href = project.link;
 
-    modal.style.display = "block";
+      const imageContainer = document.getElementById("modal-images");
+      imageContainer.innerHTML = "";
+      project.images.forEach(img => {
+        const imgEl = document.createElement("img");
+        imgEl.src = img;
+        imgEl.alt = project.title;
+        imageContainer.appendChild(imgEl);
+      });
+
+      modal.style.display = "block";
+    });
+
+    container.appendChild(card);
   });
+}
 
-  container.appendChild(card);
-});
+// Render both categories
+renderProjects(academicProjects, "academic-projects-container");
+renderProjects(freelanceProjects, "freelance-projects-container");
 
 // Close modal on outside click
-window.addEventListener("click", e => {
-  if (e.target === modal) {
-    modal.style.display = "none";
+window.addEventListener("click", (e) => {
+  if (e.target === document.getElementById("project-modal")) {
+    document.getElementById("project-modal").style.display = "none";
   }
 });
 
@@ -422,40 +437,7 @@ window.addEventListener("click", e => {
 
 //form
 
-// function openGmailWithMessage(name, email, phone, message) {
-//      const subject = encodeURIComponent("Contact From Portfolio");
-//      const body = encodeURIComponent(Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\n${message});
-//      const gmailUrl = https://mail.google.com/mail/?view=cm&fs=1&to=dhavaldave121002@gmail.com&su=${subject}&body=${body};
-//      window.open(gmailUrl, "_blank");
-//    }
-//    document.querySelector(".send-btn").addEventListener("click", function (e) {
-//      e.preventDefault();
-//      const name = document.getElementById("name").value.trim();
-//      const email = document.getElementById("email").value.trim();
-//      const phone = document.getElementById("phone").value.trim();
-//      const message = document.getElementById("message").value.trim();
-//      if (!name || !email || !phone || !message) return;
-//      openGmailWithMessage(name, email, phone, message);
-//    });
-//    document.getElementById("emailLink").addEventListener("click", function (e) {
-//      e.preventDefault();
-//      const name = document.getElementById("name").value.trim() || "Visitor";
-//      const email = document.getElementById("email").value.trim() || "No email";
-//      const phone = document.getElementById("phone").value.trim() || "No phone";
-//      const message = document.getElementById("message").value.trim() || "Hi, I’d like to connect with you.";
-//      openGmailWithMessage(name, email, phone, message);
-//    });
-//    document.getElementById("whatsappLink").addEventListener("click", function (e) {
-//      e.preventDefault();
-//      const name = document.getElementById("name").value.trim() || "Visitor";
-//      const phone = "918511172099";
-//      const text = encodeURIComponent(Hi, I'm ${name}. I saw your portfolio and want to connect.);
-//      window.open(https://wa.me/${phone}?text=${text}, "_blank");
-//    });
-//    document.getElementById("callLink").addEventListener("click", function (e) {
-//      e.preventDefault();
-//      window.open("tel:8511172099");
-//    });
+
 
 function openGmailWithMessage(name, email, phone, message) {
   const subject = encodeURIComponent("Contact From Portfolio");

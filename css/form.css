@@ -1,7 +1,7 @@
 .contact-wrapper {
     background: radial-gradient(circle, rgb(12, 56, 79) 0%, rgba(8, 14, 19, 1) 100%);
     color: #fff;
-    margin: auto;
+    padding: 40px 20px;
   }
   
   .section-title {
@@ -10,17 +10,21 @@
     color: #00ffff;
     text-shadow: 0 0 6px #00ffff99;
     margin-bottom: 30px;
-    /* animation: pulseText 2s infinite; */
   }
   
   .contact-container {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+    justify-content: center;
+  }
+  
+  .contact-form, .contact-details-box {
+    flex: 1 1 480px;
+    min-width: 300px;
   }
   
   .contact-form {
-    flex: 1 1 500px;
     background: rgba(255, 255, 255, 0.05);
     padding: 25px;
     border-radius: 14px;
@@ -66,7 +70,6 @@
   .input-group textarea:focus {
     border-color: #00ffff;
     box-shadow: 0 0 10px #00ffff88;
-    background-color: rgba(255, 255, 255, 0.07);
   }
   
   .btn-group {
@@ -78,7 +81,7 @@
   
   .contact-form button {
     flex: 1 1 48%;
-    padding: 10px 0;
+    padding: 10px;
     font-size: 15px;
     background: linear-gradient(145deg, #00bfff, #007bff);
     color: #fff;
@@ -112,11 +115,10 @@
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
   }
   
-  /* RIGHT SIDE */
+  /* Right Side */
   .contact-details-box {
-    flex: 1 1 300px;
-    padding: 25px;
     background: rgba(255, 255, 255, 0.04);
+    padding: 25px;
     border-radius: 14px;
     display: flex;
     flex-direction: column;
@@ -155,10 +157,10 @@
     padding: 16px;
     margin-bottom: 15px;
     border-radius: 12px;
-    transition: all 0.3s ease;
     text-align: center;
     position: relative;
     overflow: hidden;
+    transition: all 0.3s ease;
   }
   
   .info-card::before {
@@ -202,10 +204,17 @@
     text-decoration: underline;
   }
   
+  /* Autofill override */
+  input:-webkit-autofill,
+  textarea:-webkit-autofill {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #fff !important;
+  }
+  
   /* Responsive */
-  @media (max-width: 991px) {
-    .contact-container {
-      flex-direction: column;
+  @media (max-width: 768px) {
+    .contact-form, .contact-details-box {
+      flex: 1 1 100%;
     }
   
     .btn-group {
@@ -216,9 +225,6 @@
       flex: 1 1 100%;
     }
   }
-  input:-webkit-autofill,
-  textarea:-webkit-autofill {
-    transition: background-color 5000s ease-in-out 0s;
-    -webkit-text-fill-color: #fff !important;
+  .rside-texts{
+    font-size: 12px !important;
   }
-    
