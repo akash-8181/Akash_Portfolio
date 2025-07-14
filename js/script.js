@@ -477,3 +477,18 @@ document.getElementById("callLink").addEventListener("click", function (e) {
   e.preventDefault();
   window.open("tel:9327424030");
 });
+
+
+
+
+
+
+
+
+
+
+
+
+//footer
+
+document.getElementById("footer-year").textContent = new Date().getFullYear();
