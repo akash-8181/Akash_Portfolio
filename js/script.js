@@ -438,7 +438,7 @@ window.addEventListener("click", (e) => {
 //form
 
 
-
+// Function to open Gmail with message details from the form
 function openGmailWithMessage(name, email, phone, message) {
   const subject = encodeURIComponent("Contact From Portfolio");
   const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\n${message}`);
@@ -446,12 +446,7 @@ function openGmailWithMessage(name, email, phone, message) {
   window.open(gmailUrl, "_blank");
 }
 
-document.getElementById("emailLink2").addEventListener("click", function (e) {
-  e.preventDefault();
-  const gmailUrl = "https://mail.google.com/mail/?view=cm&fs=1&to=akashprajapati2563@gmail.com";
-  window.open(gmailUrl, "_blank");
-});
-
+// Send via Gmail button - uses form inputs
 document.querySelector(".send-btn").addEventListener("click", function (e) {
   e.preventDefault();
   const name = document.getElementById("name").value.trim();
@@ -462,17 +457,14 @@ document.querySelector(".send-btn").addEventListener("click", function (e) {
   openGmailWithMessage(name, email, phone, message);
 });
 
-document.getElementById("emailLink").addEventListener("click", function (e) {
+// Minimal Gmail link (no form data)
+document.getElementById("emailLink2").addEventListener("click", function (e) {
   e.preventDefault();
-  const name = document.getElementById("name").value.trim() || "Visitor";
-  const email = document.getElementById("email").value.trim() || "No email";
-  const phone = document.getElementById("phone").value.trim() || "No phone";
-  const message = document.getElementById("message").value.trim() || "Hi, I’d like to connect with you.";
-  openGmailWithMessage(name, email, phone, message);
+  const gmailUrl = "https://mail.google.com/mail/?view=cm&fs=1&to=akashprajapati2563@gmail.com";
+  window.location.href =gmailUrl;
 });
 
-
-
+// WhatsApp link using name from form
 document.getElementById("whatsappLink").addEventListener("click", function (e) {
   e.preventDefault();
   const name = document.getElementById("name").value.trim() || "Visitor";
@@ -481,6 +473,7 @@ document.getElementById("whatsappLink").addEventListener("click", function (e) {
   window.open(`https://wa.me/${phone}?text=${text}`, "_blank");
 });
 
+// Call button
 document.getElementById("callLink").addEventListener("click", function (e) {
   e.preventDefault();
   window.open("tel:9327424030");
