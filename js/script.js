@@ -439,23 +439,24 @@ window.addEventListener("click", (e) => {
 
 
 // Function to open Gmail with message details from the form
-function openGmailWithMessage(name, email, phone, message) {
+function openMailClientWithMessage(name, email, phone, message) {
   const subject = encodeURIComponent("Contact From Portfolio");
   const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\n${message}`);
-  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=akashprajapati2563@gmail.com&su=${subject}&body=${body}`;
-  window.open(gmailUrl, "_blank");
+  const mailtoUrl = `mailto:akashprajapati2563@gmail.com?subject=${subject}&body=${body}`;
+  window.location.href = mailtoUrl;
 }
 
-// Send via Gmail button - uses form inputs
 document.querySelector(".send-btn").addEventListener("click", function (e) {
   e.preventDefault();
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
   const phone = document.getElementById("phone").value.trim();
   const message = document.getElementById("message").value.trim();
+
   if (!name || !email || !phone || !message) return;
-  openGmailWithMessage(name, email, phone, message);
+  openMailClientWithMessage(name, email, phone, message);
 });
+
 
 // Minimal Gmail link (no form data)
 document.getElementById("emailLink2").addEventListener("click", function (e) {
