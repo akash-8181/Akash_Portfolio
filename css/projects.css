@@ -35,6 +35,9 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 255, 255, 0.05);
   width: 320px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .project-card:hover {
@@ -174,7 +177,7 @@
   }
 
   .project-card{
-    width: 260px;
+    width: 280px;
   }
   .modal h3 {
     font-size: 1.2rem;
