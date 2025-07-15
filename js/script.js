@@ -460,9 +460,11 @@ document.querySelector(".send-btn").addEventListener("click", function (e) {
 // Minimal Gmail link (no form data)
 document.getElementById("emailLink2").addEventListener("click", function (e) {
   e.preventDefault();
-  const gmailUrl = "https://mail.google.com/mail/?view=cm&fs=1&to=akashprajapati2563@gmail.com";
-  window.location.href =gmailUrl;
+  const subject = encodeURIComponent("Contact From Portfolio");
+  const body = encodeURIComponent("Hi Akash,\n\nI visited your portfolio and would like to connect.");
+  window.location.href = `mailto:akashprajapati2563@gmail.com?subject=${subject}&body=${body}`;
 });
+
 
 // WhatsApp link using name from form
 document.getElementById("whatsappLink").addEventListener("click", function (e) {
