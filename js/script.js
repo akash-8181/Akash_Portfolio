@@ -446,6 +446,12 @@ function openGmailWithMessage(name, email, phone, message) {
   window.open(gmailUrl, "_blank");
 }
 
+document.getElementById("emailLink2").addEventListener("click", function (e) {
+  e.preventDefault();
+  const gmailUrl = "https://mail.google.com/mail/?view=cm&fs=1&to=akashprajapati2563@gmail.com";
+  window.open(gmailUrl, "_blank");
+});
+
 document.querySelector(".send-btn").addEventListener("click", function (e) {
   e.preventDefault();
   const name = document.getElementById("name").value.trim();
@@ -464,6 +470,8 @@ document.getElementById("emailLink").addEventListener("click", function (e) {
   const message = document.getElementById("message").value.trim() || "Hi, I’d like to connect with you.";
   openGmailWithMessage(name, email, phone, message);
 });
+
+
 
 document.getElementById("whatsappLink").addEventListener("click", function (e) {
   e.preventDefault();
