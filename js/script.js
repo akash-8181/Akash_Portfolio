@@ -439,55 +439,53 @@ window.addEventListener("click", (e) => {
 
 
 // Function to open Gmail with message details from the form
-function openMailClientWithMessage(name, email, phone, message) {
-  const subject = encodeURIComponent("Contact From Portfolio");
-  const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\n${message}`);
-  const mailtoUrl = `mailto:akashprajapati2563@gmail.com?subject=${subject}&body=${body}`;
-  window.location.href = mailtoUrl;
-}
+document.addEventListener("DOMContentLoaded", function () {
+  // Function to open mail client with form data
+  function openMailClientWithMessage(name, email, phone, message) {
+    const subject = encodeURIComponent("Contact From Portfolio");
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\n${message}`);
+    const mailtoUrl = `mailto:akashprajapati2563@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = mailtoUrl;
+  }
 
-document.querySelector(".send-btn").addEventListener("click", function (e) {
-  e.preventDefault();
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const phone = document.getElementById("phone").value.trim();
-  const message = document.getElementById("message").value.trim();
+  // Gmail send button
+  document.querySelector(".send-btn").addEventListener("click", function (e) {
+    e.preventDefault();
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const message = document.getElementById("message").value.trim();
 
-  if (!name || !email || !phone || !message) return;
-  openMailClientWithMessage(name, email, phone, message);
+    if (!name || !email || !phone || !message) {
+      alert("Please fill out all fields.");
+      return;
+    }
+    openMailClientWithMessage(name, email, phone, message);
+  });
+
+  // Minimal email link
+  document.getElementById("emailLink2").addEventListener("click", function (e) {
+    e.preventDefault();
+    const subject = encodeURIComponent("Contact From Portfolio");
+    const body = encodeURIComponent("Hi Akash,\n\nI visited your portfolio and would like to connect.");
+    window.location.href = `mailto:akashprajapati2563@gmail.com?subject=${subject}&body=${body}`;
+  });
+
+  // WhatsApp
+  document.getElementById("whatsappLink").addEventListener("click", function (e) {
+    e.preventDefault();
+    const name = document.getElementById("name").value.trim() || "Visitor";
+    const phone = "919327424030";
+    const text = encodeURIComponent(`Hi, I'm ${name}. I saw your portfolio and want to connect.`);
+    window.open(`https://wa.me/${phone}?text=${text}`, "_blank");
+  });
+
+  // Call button
+  document.getElementById("callLink").addEventListener("click", function (e) {
+    e.preventDefault();
+    window.open("tel:9327424030");
+  });
 });
-
-
-// Minimal Gmail link (no form data)
-document.getElementById("emailLink2").addEventListener("click", function (e) {
-  e.preventDefault();
-  const subject = encodeURIComponent("Contact From Portfolio");
-  const body = encodeURIComponent("Hi Akash,\n\nI visited your portfolio and would like to connect.");
-  window.location.href = `mailto:akashprajapati2563@gmail.com?subject=${subject}&body=${body}`;
-});
-
-
-// WhatsApp link using name from form
-document.getElementById("whatsappLink").addEventListener("click", function (e) {
-  e.preventDefault();
-  const name = document.getElementById("name").value.trim() || "Visitor";
-  const phone = "919327424030";
-  const text = encodeURIComponent(`Hi, I'm ${name}. I saw your portfolio and want to connect.`);
-  window.open(`https://wa.me/${phone}?text=${text}`, "_blank");
-});
-
-// Call button
-document.getElementById("callLink").addEventListener("click", function (e) {
-  e.preventDefault();
-  window.open("tel:9327424030");
-});
-
-
-
-
-
-
-
 
 
 
